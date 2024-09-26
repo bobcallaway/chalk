@@ -13,6 +13,8 @@
 - `FAILED_KEYS` and `_OP_FAILED_KEYS` - metadata keys
   which chalk could not collect metadata for.
   Each key contains:
+- `DOCKERFILE_VCTL_REL_PATH` key reports the path of a
+   `Dockerfile`relative to the VCS' project root.
 
   - `code` - short identifiable code of a known error
   - `message` - exact encountered error/exception message

@@ -617,3 +617,12 @@ proc getOrDefault*[T](self: openArray[T], i: int, default: T): T =
   if len(self) > i:
     return self[i]
   return default
+
+proc getRelativePathBetween*(from_path: string, to_path: string) : string =
+  ## Given the `from_path`, usually the project root, return the relative
+  ## path of the file's `to_path`. Return nothing if its outside the project root
+  ## or if `to_path` is an empty string.
+  result = to_path.relativePath(from_path)
+  if result.startsWith("..") or result == "":
+    trace("Dockerfile is ephemeral or not contained within VCS project")
+    return ""
