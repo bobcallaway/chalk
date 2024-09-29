@@ -784,8 +784,6 @@ def test_nonvirtual_valid(chalk: Chalk, test_file: str, random_hex: str):
         config=CONFIGS / "docker_wrap.c4m",
     )
 
-
-
     # artifact is the docker image
     artifact_info = ArtifactInfo(
         type="Docker Image",
